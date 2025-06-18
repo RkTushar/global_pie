@@ -1,0 +1,63 @@
+body {
+    font-family: sans-serif; /* Use a modern sans-serif font */
+    background-color: #f8f9fa; /* Light background */
+}
+
+.navbar-brand {
+    color: #007bff !important; /* StartEval blue */
+}
+
+.navbar-brand .fw-bold {
+    font-size: 1.4rem;
+}
+
+.navbar-nav .nav-link {
+    color: #6c757d; /* Gray for inactive links */
+    font-weight: 500;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff; /* Active link color */
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 5px;
+}
+
+.startup-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.startup-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+.startup-card .card-title {
+    color: #343a40;
+    font-size: 1.15rem;
+}
+
+.startup-card .card-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    min-height: 40px; /* Ensure consistent height for description */
+}
+
+.startup-card .fw-bold {
+    color: #343a40;
+}
+
+/* Icons styling */
+.startup-card .fas, .startup-card .far {
+    font-size: 0.9rem;
+}
+
+.text-success { color: #28a745 !important; }
+.text-info { color: #17a2b8 !important; }
+.text-warning { color: #ffc107 !important; }
