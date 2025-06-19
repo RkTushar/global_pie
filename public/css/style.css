@@ -1,10 +1,30 @@
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #6366F1;
+    --success-color: #10B981;
+    --background-color: #F9FAFB;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 body {
-    font-family: sans-serif; /* Use a modern sans-serif font */
-    background-color: #f8f9fa; /* Light background */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+/* Modern Navbar Styling */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
 .navbar-brand {
-    color: #007bff !important; /* StartEval blue */
+    color: var(--primary-color) !important;
+    font-weight: 700;
 }
 
 .navbar-brand .fw-bold {
@@ -12,19 +32,134 @@ body {
 }
 
 .navbar-nav .nav-link {
-    color: #6c757d; /* Gray for inactive links */
+    color: var(--text-secondary);
     font-weight: 500;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(79, 70, 229, 0.1);
 }
 
 .navbar-nav .nav-link.active {
-    color: #007bff; /* Active link color */
+    color: var(--primary-color);
+    background-color: rgba(79, 70, 229, 0.1);
 }
 
 .navbar-nav .nav-link i {
     margin-right: 5px;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Metrics Cards */
+.metric-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: white;
+}
+
+.metric-card small {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.metric-card h4 {
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+/* Badges */
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 9999px;
+}
+
+.badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+    color: var(--text-secondary);
+    border-color: #E5E7EB;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #F3F4F6;
+    border-color: #E5E7EB;
+    color: var(--text-primary);
+}
+
+/* Lists */
+.list-unstyled li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.list-unstyled li i.fas.fa-circle {
+    color: var(--primary-color);
+    margin-right: 0.75rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Stats */
+.text-success i {
+    font-size: 0.75rem;
+}
+
+/* Profile Card */
+.profile-card {
+    background: linear-gradient(to bottom, rgba(79, 70, 229, 0.1), transparent);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.profile-card img {
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
 .startup-card {
