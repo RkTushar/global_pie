@@ -65,7 +65,7 @@ A modern, responsive web application for discovering and evaluating promising st
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd starteval_demo
+   cd starteval_demoo
    ```
 
 2. **Open the application**
