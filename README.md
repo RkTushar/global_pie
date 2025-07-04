@@ -22,7 +22,7 @@ A modern, responsive web application for discovering and evaluating promising st
 - **Favorite System**: Add/remove startups to favorites with visual feedback
 - **Contact Integration**: Direct contact buttons for each startup
 - **Smooth Animations**: Intersection Observer for scroll-based animations
-- **Keyboard Navigation**: Ctrl/Cmd+K for search focus, Escape for clearing
+- **Keyboard Navigation**: Ctrl orCmd+K for search focus, Escape for clearing
 - **Loading States**: Visual feedback for button interactions
 
 ## 🎨 Design System
