@@ -1,34 +1,91 @@
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Enhanced gradient with more vibrant colors -->
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#45B7D1;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#96CEB4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEAA7;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#6366F1" flood-opacity="0.3"/>
+    
+    <!-- Radial gradient for depth -->
+    <radialGradient id="radialGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:0.3" />
+    </radialGradient>
+    
+    <!-- Enhanced shadow with multiple layers -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#FF6B6B" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#4ECDC4" flood-opacity="0.3"/>
     </filter>
+    
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animated gradient for the pie slice -->
+    <linearGradient id="pieGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.7" />
+    </linearGradient>
   </defs>
   
-  <!-- Background circle -->
-  <circle cx="100" cy="100" r="90" fill="url(#logoGradient)" filter="url(#shadow)"/>
+  <!-- Animated background circle with enhanced gradient -->
+  <circle cx="100" cy="100" r="90" fill="url(#logoGradient)" filter="url(#shadow)">
+    <animate attributeName="r" values="90;92;90" dur="3s" repeatCount="indefinite"/>
+  </circle>
   
-  <!-- Globe icon -->
-  <g transform="translate(100, 100)" fill="white">
-    <!-- Globe outline -->
-    <circle cx="0" cy="0" r="35" fill="none" stroke="white" stroke-width="3" opacity="0.9"/>
+  <!-- Additional radial overlay for depth -->
+  <circle cx="100" cy="100" r="85" fill="url(#radialGradient)" opacity="0.3"/>
+  
+  <!-- Enhanced globe icon with better proportions -->
+  <g transform="translate(100, 100)" fill="white" filter="url(#glow)">
+    <!-- Globe outline with thicker stroke -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="white" stroke-width="4" opacity="0.95"/>
     
-    <!-- Latitude lines -->
-    <path d="M -35 0 Q -17.5 -15 0 -15 Q 17.5 -15 35 0" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
-    <path d="M -35 0 Q -17.5 15 0 15 Q 17.5 15 35 0" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+    <!-- Enhanced latitude lines with varying opacity -->
+    <path d="M -40 0 Q -20 -18 0 -18 Q 20 -18 40 0" fill="none" stroke="white" stroke-width="2.5" opacity="0.8"/>
+    <path d="M -40 0 Q -20 18 0 18 Q 20 18 40 0" fill="none" stroke="white" stroke-width="2.5" opacity="0.8"/>
+    <path d="M -40 0 Q -20 -8 0 -8 Q 20 -8 40 0" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -40 0 Q -20 8 0 8 Q 20 8 40 0" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
     
-    <!-- Longitude lines -->
-    <path d="M 0 -35 Q 15 -17.5 15 0 Q 15 17.5 0 35" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
-    <path d="M 0 -35 Q -15 -17.5 -15 0 Q -15 17.5 0 35" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+    <!-- Enhanced longitude lines -->
+    <path d="M 0 -40 Q 18 -20 18 0 Q 18 20 0 40" fill="none" stroke="white" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 0 -40 Q -18 -20 -18 0 Q -18 20 0 40" fill="none" stroke="white" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 0 -40 Q 8 -20 8 0 Q 8 20 0 40" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 0 -40 Q -8 -20 -8 0 Q -8 20 0 40" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
     
-    <!-- Center dot -->
-    <circle cx="0" cy="0" r="3" fill="white"/>
+    <!-- Enhanced center dot with glow -->
+    <circle cx="0" cy="0" r="4" fill="white" opacity="0.9"/>
+    <circle cx="0" cy="0" r="2" fill="#FFE66D"/>
   </g>
   
-  <!-- Pie slice overlay -->
-  <path d="M 100 100 L 100 10 A 90 90 0 0 1 145 55 Z" fill="white" opacity="0.2"/>
+  <!-- Enhanced pie slice overlay with gradient and animation -->
+  <path d="M 100 100 L 100 10 A 90 90 0 0 1 150 60 Z" fill="url(#pieGradient)" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Additional decorative elements -->
+  <!-- Small floating particles -->
+  <circle cx="30" cy="40" r="2" fill="#FFE66D" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="170" cy="60" r="1.5" fill="#4ECDC4" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="160" cy="150" r="2.5" fill="#FF6B6B" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Subtle inner glow ring -->
+  <circle cx="100" cy="100" r="75" fill="none" stroke="white" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="75;77;75" dur="4s" repeatCount="indefinite"/>
+  </circle>
 </svg> 
