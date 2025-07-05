@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="avatarShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#6366F1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#avatarGradient)" filter="url(#avatarShadow)"/>
+  
+  <!-- User icon -->
+  <g transform="translate(60, 60)" fill="white">
+    <!-- Head -->
+    <circle cx="0" cy="-8" r="12" fill="white"/>
+    
+    <!-- Body -->
+    <path d="M -15 8 Q -15 25 0 35 Q 15 25 15 8 Z" fill="white"/>
+  </g>
+</svg> 
