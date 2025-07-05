@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Pie Logo Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        .logo-icon {
+            font-size: 80px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+            text-align: center;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+        .avatar-icon {
+            font-size: 50px;
+            color: white;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="logo-container">
+        <h1>Global Pie Brand Assets</h1>
+        
+        <div>
+            <h3>Logo</h3>
+            <div class="logo" id="logo">
+                <i class="fas fa-globe logo-icon"></i>
+            </div>
+            <button class="download-btn" onclick="downloadLogo()">Download Logo</button>
+        </div>
+        
+        <div>
+            <h3>Default Avatar</h3>
+            <div class="avatar" id="avatar">
+                <i class="fas fa-user avatar-icon"></i>
+            </div>
+            <button class="download-btn" onclick="downloadAvatar()">Download Avatar</button>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function downloadLogo() {
+            html2canvas(document.getElementById('logo')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'global-pie-logo.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+        
+        function downloadAvatar() {
+            html2canvas(document.getElementById('avatar')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'user-avatar.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html> 
