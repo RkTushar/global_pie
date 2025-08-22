@@ -1,4 +1,4 @@
-# Global Pie – A Modern Startup Discovery Platform
+# Global Pie – Modern Startup Discovery Platform
 
 A modern, responsive web application for discovering and evaluating promising startups. Built with HTML5, CSS3, and vanilla JavaScript with a focus on user experience and modern design principles.
 
